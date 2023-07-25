@@ -2,6 +2,9 @@ import React, { useState } from "react"
 import { navLinks } from "./constants";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+import { navVariants } from "./utils/motion";
+
 
 const Navbar = () => {
   const [active, setActive] = useState(" ");
@@ -9,7 +12,11 @@ const Navbar = () => {
 
 
   return (
-    <nav className="w-full flex items-center py-5 fixed top-0 z-20 sm:px-16 px-6">
+    <motion.nav
+    variants={navVariants}
+    initial="hidden"
+    whileInView="show"
+    className="w-full flex items-center py-5 fixed top-0 z-20 sm:px-16 px-6">
       <div className="w-full flex justify-between items-center max-w-[1440px] mx-auto border-b-2 pb-4">
         <Link 
         href='/' 
@@ -74,7 +81,7 @@ const Navbar = () => {
         </div>
 
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 

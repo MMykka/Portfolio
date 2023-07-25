@@ -1,6 +1,8 @@
 import React from "react"
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
     <section className="relative w-full h-[900px] lg:h-screen mx-auto ">
@@ -26,9 +28,20 @@ const Hero = () => {
             </div>
           </div>
           </div>
-          <div className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px]">
+          <motion.div
+          animate={{
+            y: [0, 20, 0]
+          }}
+          transition={{
+            duration:3.5,
+            repeat: Infinity,
+            repeatType: 'loop'
+          }}
+
+          className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px]"
+          >
             <img className="rounded-full w-[100%] shadow-card" src="mika.jpeg" alt="mika"/>
-          </div>
+          </motion.div>
         </div>
 
 
