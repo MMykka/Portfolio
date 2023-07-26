@@ -97,3 +97,18 @@ export const services = [
       source_code_link: "https://github.com/",
     },
   ];
+
+  export const options = [
+    {
+      icon: "sunny",
+      text:'light',
+    },
+    {
+      icon: "moon",
+      text:'dark',
+    },
+    {
+      icon: "desktop-outline",
+      text: "system",
+    }
+  ];

@@ -12,9 +12,6 @@ html::-webkit-scrollbar-thumb {
     @apply rounded-2xl
   }
 
-body {
-    @apply bg-[#181823];
-}
 
 .green-pink-gradient {
     background: "#00cea8";
@@ -24,4 +21,10 @@ body {
 
 .span-highlight {
     @apply text-[#537FE7] font-black italic;
+}
+
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
 }
