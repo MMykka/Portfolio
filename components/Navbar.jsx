@@ -3,7 +3,7 @@ import { navLinks, options } from "./constants";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
-import { navVariants } from "./utils/motion";
+import { fadeIn, navVariants, slideIn, staggerContainer } from "./utils/motion";
 
 
 const Navbar = () => {
@@ -83,27 +83,41 @@ const Navbar = () => {
           ))}
         </ul>
 
-      
+            {/* mobile nav */}
 
-        <div className='lg:hidden flex flex-1 justify-end items-center pr-2  sm:mr-[4rem] mr-0 text-[#111 '>
-          <img 
-           src={toggle ? 'close.svg' : 'menu.svg'}
-           alt='menu'
-           className='w-[28px] h-[28px]  object-contain cursor-pointer'
-           onClick={() => setToggle(!toggle)}
-          />
-          <div className={`${!toggle ? "hidden" : "flex"} p-6 absolute top-0 right-0 min-w-[400px] h-screen bg-[#000] z-10 flex justify-center items-center`}>
-          <div className="absolute lg:hidden top-5 left-0 duration-100 text-[#272727] dark:text-[#E9F8F9]">
+        <motion.div
+        variants={staggerContainer()}
+        initial='hidden'
+        whileInView='show'
+        viewport={{once: true, amount: 0.25}}
+        className='lg:hidden flex flex-1 justify-end items-center pr-2  sm:mr-[4rem] mr-0 text-[#111]'>
+          <div 
+          className={`w-[28px] h-[28px]  object-contain cursor-pointer duration-300 dark:text-[#C0EEF2] text-[#73BBC9] ${toggle && 'hidden'}`}
+           onClick={() => setToggle(!toggle)}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+          </svg>
+          </div>
+          <motion.div 
+           variants={slideIn('left', 'spring', 0.1 , 0.5)}
+           initial="hidden"
+           whileInView="show"
+          className={`${!toggle ? "hidden" : "flex"} p-6 absolute top-0 right-0 w-full h-screen bg-[#272727] dark:bg-[#181823] z-10 flex justify-center items-center opacity-90`}
+          >
+            {/* theme color */}
+          <div className="absolute lg:hidden top-5 left-0 duration-100 text-white opacity-100 dark:text-[#E9F8F9]">
               {options?.map(opt=>(
                 <button 
                 key={opt.text} 
-                className={`w-10 h-10 rounded-full text-[30px] mx-2 duration-300 ${theme === opt.text && 'dark:text-[#C0EEF2] text-[#73BBC9] '}`}
+                className={`w-10 h-10 rounded-full text-[30px] opacity-100 mx-2 duration-300 ${theme === opt.text && 'opacity-100 dark:text-[#C0EEF2] text-[#73BBC9] '}`}
                 onClick={()=> setTheme(opt.text)}
                 >
                 <ion-icon name={opt.icon}></ion-icon>
               </button>
               ))}
             </div>
+                {/* ======= */}
+                {/* inside mobile nav bar */}
             <img 
                 src={toggle ? 'close.svg' : 'menu.svg'}
                 alt='menu'
@@ -112,8 +126,11 @@ const Navbar = () => {
                 />
                 <ul className='list-none flex justify-end items-start flex-col gap-20'>
                   
-                {navLinks.map((Link) =>(
-                  <li
+                {navLinks.map((Link, index) =>(
+                  <motion.li
+                  variants={fadeIn('right', 'spring', 0.3 * index, 0.75)}
+                  initial="hidden"
+                  whileInView="show"
                   key={Link.id}
                   className={`${
                     active === Link.title
@@ -126,11 +143,11 @@ const Navbar = () => {
                   }}
                   >
                     <a href={`#${Link.id}`}>{Link.title}</a>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-              </div>
-        </div>
+              </motion.div>
+        </motion.div>
 
       </div>
     </motion.nav>

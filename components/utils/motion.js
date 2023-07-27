@@ -90,7 +90,7 @@ export const textVariant = (delay) => {
           type: type,
           delay: delay,
           duration: duration,
-          ease: "easeOut",
+          ease: "easeIn",
         },
       },
     };
