@@ -39,11 +39,11 @@ export const services = [
         "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
       tags: [
         {
-          name: "react",
+          name: "API",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "NextJs",
           color: "green-text-gradient",
         },
         {
@@ -52,7 +52,8 @@ export const services = [
         },
       ],
       image: 'carrent.png',
-      source_code_link: "https://github.com/MMykka",
+      source_code_link: "https://michael-car-rent.vercel.app",
+      github: "https://github.com/MMykka/Car_Rent",
     },
     {
       name: "Job IT",
