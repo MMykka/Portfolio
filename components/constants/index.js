@@ -1,4 +1,3 @@
-
 export const navLinks = [
     {
       id: "about",
@@ -56,37 +55,38 @@ export const services = [
       github: "https://github.com/MMykka/Car_Rent",
     },
     {
-      name: "Job IT",
+      name: "3D Portfolio",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "3D portfolio, where creativity meets precision. With a passion for bringing ideas to life through detailed modeling, texturing and animation",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "threejs",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "tailwindcss",
           color: "pink-text-gradient",
         },
       ],
-      image: 'jobit.png',
-      source_code_link: "https://github.com/",
+      image: 'porto.jpg',
+      source_code_link: "https://mykkaa.github.io/threedproj/",
+      github: "https://github.com/Mykkaa/threedproj"
     },
     {
-      name: "Trip Guide",
+      name: "WeScale",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Time is valuable why waste it when Ai could turn your social media into a Automation PowerHouse, Focus on bringing more traffic while Ai turns them into customers and reoccurting customers",
       tags: [
         {
           name: "nextjs",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "tailwind",
           color: "green-text-gradient",
         },
         {
@@ -94,8 +94,9 @@ export const services = [
           color: "pink-text-gradient",
         },
       ],
-      image: 'tripguide.png',
-      source_code_link: "https://github.com/",
+      image: 'wescale.jpg',
+      source_code_link: "mediabuilder.net",
+      github: "https://github.com/"
     },
   ];
 
