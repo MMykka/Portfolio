@@ -95,7 +95,7 @@ export const services = [
         },
       ],
       image: 'wescale.jpg',
-      source_code_link: "mediabuilder.net",
+      source_code_link: "https://mediabuilders.net",
       github: "https://github.com/"
     },
   ];
